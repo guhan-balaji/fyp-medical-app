@@ -200,8 +200,15 @@ app.post("/sessionLogin", async (req, res) => {
   }
 });
 
-app.get("/logout", (_, res) => {
+app.get("/logout", async (req, res) => {
   res.clearCookie("session");
+  try {
+    const sessionCookie = req.cookies.session || "";
+    const decodedClaims = await auth.verifySessionCookie(sessionCookie);
+    auth.revokeRefreshTokens(decodedClaims.uid, true);
+  } catch (error) {
+    console.error({ error });
+  }
   res.redirect("/");
 });
 
