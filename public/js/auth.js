@@ -9,6 +9,7 @@ if (loginBtn) {
       const result = await firebase.auth().signInWithPopup(provider);
       // console.log("result", result);
       // console.log("id token: ", result.user.getIdToken());
+      const { isNewUser } = result.additionalUserInfo;
       const userIdToken = await result.user.getIdToken();
       const res = await fetch(URL, {
         method: "POST",
@@ -18,7 +19,11 @@ if (loginBtn) {
       });
       // console.log(res);
       firebase.auth().signOut();
-      window.location.replace("/");
+      if (isNewUser) {
+        window.location.replace("/logout");
+      } else {
+        window.location.replace("/");
+      }
     } catch (error) {
       const { code, message } = error;
       console.error({ code });
