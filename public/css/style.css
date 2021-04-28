@@ -1,0 +1,38 @@
+body {
+    background: #8fd9a8;
+}
+
+ul {
+    display: flex;
+    list-style: none;
+    padding: 1%;
+}
+
+ul > li {
+    margin: 0 0.5%;
+}
+
+.animate {
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    animation-name: example;
+    font-size: 30px;
+    position: relative;
+    text-align: center;
+}
+
+.clg {
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+}
+
+@keyframes example {
+    from {
+        top: 300px;
+    }
+
+    to {
+        top: 100px;
+    }
+}

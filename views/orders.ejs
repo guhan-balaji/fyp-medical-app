@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include("partials/header.ejs") %>
+  <body>
+      <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/requests">Requests</a></li>
+          <li><a href="/logout">Logout</a></li>
+      </ul>
+    <div class="container mt-5 mb-5">
+      <h1 class="text-center">Order History</h1>
+      <% if (isEmpty) { %>
+      <p>History cleared. Empty</p>
+      <% } else { %> <% records.forEach(element => { %> 
+      <% const {name, email,
+      symptoms, symptomDays, deliverTo, prescription, prescribedByName,
+      prescribedByEmail} = element %>
+      <div class="card mx-auto mt-5 p-2">
+        <div class="mb-3 row">
+          <label for="name" class="col-sm-2 col-form-label">Name:</label>
+          <div class="col-sm-10">
+            <input
+              type="text"
+              class="form-control-plaintext"
+              name="name"
+              id="name"
+              value="<%= name %>"
+              readonly
+            />
+          </div>
+        </div>
+        <div class="mb-3 row">
+          <label for="email" class="col-sm-2 col-form-label">Email:</label>
+          <div class="col-sm-10">
+            <input
+              type="text"
+              class="form-control-plaintext"
+              name="email"
+              id="email"
+              value="<%= email %>"
+              readonly
+            />
+          </div>
+        </div>
+        <div class="mb-3 row">
+          <label for="symptoms" class="col-sm-2 col-form-label">
+            Symptoms:
+          </label>
+          <div class="col-sm-10">
+            <input
+              type="text"
+              class="form-control-plaintext"
+              name="symptoms"
+              id="symptoms"
+              value="<%= symptoms %>"
+              readonly
+            />
+          </div>
+        </div>
+        <div class="mb-3 row form-group">
+          <label for="symptomDays" class="col-sm-2 col-form-label">
+            Days with symptoms:
+          </label>
+          <div class="col-sm-10">
+            <input
+              type="text"
+              class="form-control-plaintext"
+              name="symptomDays"
+              id="symptomDays"
+              value="<%= symptomDays %>"
+              readonly
+            />
+          </div>
+        </div>
+        <div class="mb-3 row">
+          <label for="deliverTo" class="col-sm-2 col-form-label">
+            Deliver To:
+          </label>  
+          <div class="col-sm-10">
+            <input
+              type="text"
+              class="form-control-plaintext"
+              name="deliverTo"
+              value="<%= deliverTo %>"
+              readonly
+            />
+          </div>
+        </div>
+        <div class="mb-3 row">
+          <label for="prescription" class="col-sm-2 col-form-label">
+            Prescription:
+          </label>
+          <div class="col-sm-10">
+            <input
+              type="text"
+              class="form-control-plaintext"
+              name="prescription"
+              id="prescription"
+              value="<%= prescription %>"
+              readonly
+            />
+          </div>
+        </div>
+        <div class="mb-3 row">
+          <label for="prescribedByName" class="col-sm-2 col-form-label">
+            Prescribers' Name:
+          </label>
+          <div class="col-sm-10">
+            <input
+              type="text"
+              class="form-control-plaintext"
+              name="prescribedByName"
+              id="prescribedByName"
+              value="<%= prescribedByName %>"
+              readonly
+            />
+          </div>
+        </div>
+        <div class="mb-3 row">
+          <label for="prescribedByEmail" class="col-sm-2 col-form-label">
+            Prescribers' Email:
+          </label>
+          <div class="col-sm-10">
+            <input
+              type="text"
+              class="form-control-plaintext"
+              name="prescribedByEmail"
+              id="prescribedByEmail"
+              value="<%= prescribedByEmail %>"
+              readonly
+            />
+          </div>
+        </div>
+      </div>
+      <% }) %> <% } %>
+    </div>
+  </body>
+</html>

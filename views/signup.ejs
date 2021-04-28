@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include("partials/header.ejs") %>
+  <body>
+    <div class="container text-wrap mt-5">
+      <h1>You are not registered. Please Signup.</h1>
+      <form id="signup" action="/signup" method="post">
+        <div class="form-group">
+          <label for="name">Name:</label>
+          <input
+            type="text"
+            class="form-control"
+            id="name"
+            placeholder="Enter Name"
+            name="name"
+            required
+          />
+        </div>
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="age">Age:</label>
+            <input
+              type="number"
+              class="form-control"
+              id="age"
+              placeholder="Enter Age"
+              name="age"
+              min="16"
+              max="40"
+              required
+            />
+          </div>
+
+          <div class="form-group col-md-6 gender">
+            <label for="gender">Gender:</label>
+            <br />
+            <div class="form-check-inline">
+              <label class="form-check-label" for="radio1">
+                <input
+                  type="radio"
+                  class="form-check-input"
+                  id="radio1"
+                  name="gender"
+                  value="M"
+                  required
+                />Male
+              </label>
+            </div>
+
+            <div class="form-check-inline">
+              <label class="form-check-label" for="radio2">
+                <input
+                  type="radio"
+                  class="form-check-input"
+                  id="radio2"
+                  name="gender"
+                  value="F"
+                  required
+                />Female
+              </label>
+            </div>
+
+            <div class="form-check-inline">
+              <label class="form-check-label">
+                <input
+                  type="radio"
+                  class="form-check-input"
+                  id="radio3"
+                  name="gender"
+                  value="O"
+                  required
+                />Other
+              </label>
+            </div>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="rlno">Roll Number:</label>
+            <input
+              type="text"
+              class="form-control"
+              id="rlno"
+              placeholder="Enter Roll Number"
+              name="rlno"
+              required
+            />
+          </div>
+
+          <div class="form-group col-md-6">
+            <label for="phno">Contact Number:</label>
+            <input
+              type="text"
+              class="form-control"
+              id="phno"
+              placeholder="Enter Contact Number"
+              name="phno"
+              required
+            />
+          </div>
+        </div>
+        <button type="submit" class="btn btn-dark">SUBMIT</button>
+      </form>
+    </div>
+  </body>
+</html>
