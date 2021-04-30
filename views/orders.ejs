@@ -2,23 +2,32 @@
 <html lang="en">
   <%- include("partials/header.ejs") %>
   <body>
-      <ul>
-          <li><a href="/">Home</a></li>
-          <li><a href="/medicalStaff">Requests</a></li>
-          <li><a href="/logout">Logout</a></li>
+
+    <nav class="navbar navbar-expand-lg fixed-top" style="background-color: #1e212d;">
+      <ul class="navbar-row ml-auto" style="margin-bottom: 0px;">
+        <li class="nav-item">
+          <a class="nav-link" href="/">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/medicalStaff">Requests</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" style="width: 120px;" href="/logout">Log Out</a>
+        </li>
       </ul>
+    </nav>
+<br>
+<br>
     <div class="container mt-5 mb-5">
-      <h1 class="text-center">Order History</h1>
+      <h3 class="text-center"><b>ORDER HISTORY</b></h3>
       <% if (isEmpty) { %>
       <p>History cleared. Empty</p>
       <% } else { %> <% records.forEach(element => { %> 
-      <% const {name, email,
-      symptoms, symptomDays, deliverTo, prescription, prescribedByName,
-      prescribedByEmail} = element %>
+      <% const {name, email,symptoms, symptomDays, deliverTo, prescription, prescribedByName, prescribedByEmail} = element %>
       <div class="card mx-auto mt-5 p-2">
         <div class="mb-3 row">
-          <label for="name" class="col-sm-2 col-form-label">Name:</label>
-          <div class="col-sm-10">
+          <label for="name" class="col-sm-3 col-form-label"><b>NAME:</b></label>
+          <div class="col-sm-9">
             <input
               type="text"
               class="form-control-plaintext"
@@ -30,8 +39,8 @@
           </div>
         </div>
         <div class="mb-3 row">
-          <label for="email" class="col-sm-2 col-form-label">Email:</label>
-          <div class="col-sm-10">
+          <label for="email" class="col-sm-3 col-form-label"><b>EMAIL:</b></label>
+          <div class="col-sm-9">
             <input
               type="text"
               class="form-control-plaintext"
@@ -43,10 +52,10 @@
           </div>
         </div>
         <div class="mb-3 row">
-          <label for="symptoms" class="col-sm-2 col-form-label">
-            Symptoms:
+          <label for="symptoms" class="col-sm-3 col-form-label">
+            <b>SYMPTOMS:</b>
           </label>
-          <div class="col-sm-10">
+          <div class="col-sm-9">
             <input
               type="text"
               class="form-control-plaintext"
@@ -58,10 +67,10 @@
           </div>
         </div>
         <div class="mb-3 row form-group">
-          <label for="symptomDays" class="col-sm-2 col-form-label">
-            Days with symptoms:
+          <label for="symptomDays" class="col-sm-3 col-form-label">
+            <b>DAYS WITH SYMPTOMS:</b>
           </label>
-          <div class="col-sm-10">
+          <div class="col-sm-9">
             <input
               type="text"
               class="form-control-plaintext"
@@ -73,10 +82,10 @@
           </div>
         </div>
         <div class="mb-3 row">
-          <label for="deliverTo" class="col-sm-2 col-form-label">
-            Deliver To:
+          <label for="deliverTo" class="col-sm-3 col-form-label">
+            <b>DELIVER TO:</b>
           </label>  
-          <div class="col-sm-10">
+          <div class="col-sm-9">
             <input
               type="text"
               class="form-control-plaintext"
@@ -87,10 +96,10 @@
           </div>
         </div>
         <div class="mb-3 row">
-          <label for="prescription" class="col-sm-2 col-form-label">
-            Prescription:
+          <label for="prescription" class="col-sm-3 col-form-label">
+            <b>PRESCRIPTION:</b>
           </label>
-          <div class="col-sm-10">
+          <div class="col-sm-9">
             <input
               type="text"
               class="form-control-plaintext"
@@ -102,10 +111,10 @@
           </div>
         </div>
         <div class="mb-3 row">
-          <label for="prescribedByName" class="col-sm-2 col-form-label">
-            Prescribers' Name:
+          <label for="prescribedByName" class="col-sm-3 col-form-label">
+            <b>PRESCRIBERS' NAME:</b>
           </label>
-          <div class="col-sm-10">
+          <div class="col-sm-9">
             <input
               type="text"
               class="form-control-plaintext"
@@ -117,10 +126,10 @@
           </div>
         </div>
         <div class="mb-3 row">
-          <label for="prescribedByEmail" class="col-sm-2 col-form-label">
-            Prescribers' Email:
+          <label for="prescribedByEmail" class="col-sm-3 col-form-label">
+            <b>PRESCRIBERS' EMAIL:</b>
           </label>
-          <div class="col-sm-10">
+          <div class="col-sm-9">
             <input
               type="text"
               class="form-control-plaintext"

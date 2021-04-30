@@ -2,19 +2,31 @@
 <html>
   <%- include("partials/header.ejs") %>
   <body>
-    <div>
-      <ul>
-        <li>
-          <a href="/patient">Patient</a>
-        </li>
-        <li>
-          <a href="/medicalStaff">Medical Staff</a>
-        </li>
-        <li>
-          <a href="/logout">Clear Cookie</a>
-        </li>
-      </ul>
-      <p class="ml-3 text-light"><strong>NOTE:</strong> clearing cookie will log you out</p>
+    <div class="logo">
+      <img src="img/iiit.png" width="100" height="100" padding-bottom="50px" />
+      <br />
+      <br />
+      <h2><b>IIITD&M KURNOOL CLINIC FORM</b></h2>
+    </div>
+    <div class="flex-container home">
+      <div class="pic">
+        <div class="patient card text-center">
+          <div class="card-body">
+            <img src="img/pat.png" width="250" height="250" />
+            <h5 class="title card-title"><a href="/patient">PATIENT</a></h5>
+          </div>
+        </div>
+      </div>
+      <div class="pic">
+        <div class="doctor card text-center">
+          <div class="card-body">
+            <img src="img/doc.png" width="250" height="250" />
+            <h5 class="title card-title">
+              <a href="/medicalStaff">MEDICAL CONSULTANT</a>
+            </h5>
+          </div>
+        </div>
+      </div>
     </div>
   </body>
 </html>

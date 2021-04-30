@@ -2,15 +2,24 @@
 <html lang="en">
   <%- include("partials/header.ejs") %>
   <body>
-    <ul>
-      <li><a href="/">Home</a></li>
-      <li><a href="/logout">Logout</a></li>
-    </ul> 
+
+    <nav class="navbar navbar-expand-lg fixed-top" style="background-color: #1e212d;">
+      <ul class="navbar-row ml-auto" style="margin-bottom: 0px;">
+        <li class="nav-item">
+          <a class="nav-link" href="/">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" style="width: 120px;" href="/logout">Log Out</a>
+        </li>
+      </ul>
+    </nav>
+    <br>
+    <br>
     <!-- form start -->
     <div class="container mt-5">
       <form class="card mt-3 p-4" action="/patient" method="post">
         <div class="mb-3">
-          <label for="symptoms">Symptoms</label>
+          <label for="symptoms"><b>Symptoms</b></label>
           <textarea
             class="form-control"
             id="symptoms"
@@ -23,7 +32,7 @@
         </div>
         <div class="mb-3">
           <label for="symptomDays">
-            Days with symptoms
+            <b>Days with symptoms</b>
           </label>
           <input
             class="form-control"
@@ -36,31 +45,33 @@
           />
         </div>
         <div class="mb-3">
-          <label for="deliverTo" class="form-label">Deliver To</label>
+          <label for="deliverTo" class="form-label"><b>Deliver To</b></label>
           <select name="deliverTo" id="deliverTo" class="form-select form-control" required>
             <option value="Boys Hostel">Boys Hostel</option>
             <option value="Girls Hostel">Girls Hostel</option>
             <option value="Academic Block">Academic Block</option>
           </select>
         </div>
-        <button type="submit" class="btn btn-dark mt-2 ">submit</button>
+        <div class="butn">
+        <button type="submit" class="buttons btn btn-dark">submit</button>
+      </div>
       </form>
     </div>
     <!-- form end -->
     <div class="container mb-5">
-      <h2 class="text-center mt-5">Pending Requests</h2>
+      <h2 class="text-center mt-5"><b>PENDING REQUESTS</b></h2>
       <% if (isEmpty) { %>
       <div class="card text-center mt-5">
-        <p>You have no pending requests.</p>
+        <p><i>You have no pending requests.</i></p>
       </div>
       <% } else { %> <% records.forEach((element) => { %> 
       <% const {symptoms, symptomDays, deliverTo} = element %>
       <div class="card mx-auto mt-5 p-2">
         <div class="mb-3 row">
-          <label for="deliverTo" class="col-sm-2 col-form-label">
-            Symptoms:
+          <label for="deliverTo" class="col-sm-3 col-form-label">
+           <b> Symptoms:</b>
           </label>
-          <div class="col-sm-10">
+          <div class="col-sm-9">
             <input
               type="text"
               class="form-control-plaintext"
@@ -71,10 +82,10 @@
           </div>
         </div>
         <div class="mb-3 row">
-          <label for="symptomDays" class="col-sm-2 col-form-label">
-            Days with symptoms:
+          <label for="symptomDays" class="col-sm-3 col-form-label">
+            <b>Days with symptoms:</b>
           </label>
-          <div class="col-sm-10">
+          <div class="col-sm-9">
             <input
               type="text"
               class="form-control-plaintext"
@@ -85,10 +96,10 @@
           </div>
         </div>
         <div class="mb-3 row">
-          <label for="deliverTo" class="col-sm-2 col-form-label">
-            Deliver To:
+          <label for="deliverTo" class="col-sm-3 col-form-label">
+          <b> Deliver To:</b>
           </label>
-          <div class="col-sm-10">
+          <div class="col-sm-9">
             <input
               type="text"
               class="form-control-plaintext"

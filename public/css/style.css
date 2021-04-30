@@ -1,19 +1,19 @@
 body {
-    background: #8fd9a8;
+    background: #94ebcd;
 }
 
 ul {
     display: flex;
     list-style: none;
-    padding: 1%;
+    /*  padding: 1%; */
 }
 
-ul > li {
+ul>li {
     margin: 0 0.5%;
 }
 
 .animate {
-    animation-duration: 1s;
+    animation-duration: 1.4s;
     animation-fill-mode: forwards;
     animation-name: example;
     font-size: 30px;
@@ -29,10 +29,87 @@ ul > li {
 
 @keyframes example {
     from {
-        top: 300px;
+        top: 230px;
     }
 
     to {
-        top: 100px;
+        top: 30px;
     }
+}
+
+/* home */
+
+.logo {
+    text-align: center;
+    padding-top: 30px;
+}
+
+.home {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-content: space-between
+}
+
+div.pic {
+    margin: 30px;
+}
+
+
+.pic {
+    text-align: center;
+}
+
+.patient {
+    display: inline-block;
+    margin: auto;
+
+
+}
+
+.doctor {
+    display: inline-block;
+    margin: auto;
+
+}
+
+.title {
+    padding-top: 30px;
+}
+
+/* medicalStaff and patient */
+
+.butn {
+    text-align: center;
+}
+
+.buttons {
+    text-align: center;
+}
+
+.btn {
+    border-radius: 3rem;
+    padding: 0.75rem 4rem;
+    font-weight: bold;
+}
+
+.btn-dark {
+    background-color: #0f3057;
+    color: white;
+    font-weight: bold;
+}
+
+
+.btn-dark:hover {
+    background-color: #09015f;
+    color: white;
+    font-weight: bold;
+}
+
+.card {
+    background-color: #f4f9f9;
+    border-style: inset;
+    border-width: 3px;
+    border-radius: 10px;
+
 }

@@ -2,26 +2,40 @@
 <html lang="en">
   <%- include("partials/header.ejs") %>
   <body>
-    <ul>
-      <li><a href="/">Home</a></li>
-      <li><a href="/orders">History</a></li>
-      <li><a href="/logout">Logout</a></li>
-    </ul>
-    <div class="container mt-5 w-50">
-    <h6 class="text-center">Signed in as: <%= staffName %> </h6>
-    <h2 class="text-center m-5">Pending Requests</h2>
-    <% if (isEmpty) { %>
+    <nav
+      class="navbar navbar-expand-lg fixed-top"
+      style="background-color: #1e212d"
+    >
+      <span class="navbar-text mb-0 h6" style="color: white">
+        <b>Signed in as:</b> <%= staffName %>
+      </span>
+      <ul class="navbar-row ml-auto" style="margin-bottom: 0px">
+        <li class="nav-item">
+          <a class="nav-link" href="/">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/orders">History</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" style="width: 120px" href="/logout">Log Out</a>
+        </li>
+      </ul>
+    </nav>
+    <br />
+    <br />
+    <div class="container mt-5 w-30">
+      <h3 class="text-center m-5"><b>PENDING REQUESTS</b></h3>
+      <% if (isEmpty) { %>
 
-    <p class="text-center mt-4">You have no requests</p>
+      <p class="text-center mt-4"><b>YOU HAVE NO REQUESTS.</b></p>
 
-    <% } else { %>
-      <% records.forEach((element) => { %> 
+      <% } else { %> <% records.forEach((element) => { %> 
       <% const {docId, name, email, symptoms, symptomDays, deliverTo} = element %>
       <form class="card mt-3 p-2" action="/medicalStaff" method="post">
         <input type="text" name="docId" value="<%= docId %>" hidden />
         <div class="mb-3 row">
-          <label for="name" class="col-sm-2 col-form-label">Name:</label>
-          <div class="col-sm-10">
+          <label for="name" class="col-sm-3 col-form-label"><b>Name:</b></label>
+          <div class="col-sm-9">
             <input
               type="text"
               class="form-control-plaintext"
@@ -33,8 +47,10 @@
           </div>
         </div>
         <div class="mb-3 row">
-          <label for="email" class="col-sm-2 col-form-label">Email:</label>
-          <div class="col-sm-10">
+          <label for="email" class="col-sm-3 col-form-label"
+            ><b>Email:</b></label
+          >
+          <div class="col-sm-9">
             <input
               type="text"
               class="form-control-plaintext"
@@ -46,10 +62,10 @@
           </div>
         </div>
         <div class="mb-3 row">
-          <label for="symptoms" class="col-sm-2 col-form-label">
-            Symptoms:
+          <label for="symptoms" class="col-sm-3 col-form-label">
+            <b>Symptoms:</b>
           </label>
-          <div class="col-sm-10">
+          <div class="col-sm-9">
             <input
               type="text"
               class="form-control-plaintext"
@@ -61,10 +77,10 @@
           </div>
         </div>
         <div class="mb-3 row form-group">
-          <label for="symptomDays" class="col-sm-2 col-form-label">
-            Days with symptoms:
+          <label for="symptomDays" class="col-sm-3 col-form-label">
+            <b>Days with symptoms:</b>
           </label>
-          <div class="col-sm-10">
+          <div class="col-sm-9">
             <input
               type="text"
               class="form-control-plaintext"
@@ -76,10 +92,10 @@
           </div>
         </div>
         <div class="mb-3 row">
-          <label for="deliverTo" class="col-sm-2 col-form-label">
-            Deliver To:
+          <label for="deliverTo" class="col-sm-3 col-form-label">
+            <b>Deliver To:</b>
           </label>
-          <div class="col-sm-10">
+          <div class="col-sm-9">
             <input
               type="text"
               class="form-control-plaintext"
@@ -90,10 +106,10 @@
           </div>
         </div>
         <div class="mb-3 row">
-          <label for="prescription" class="col-sm-2 col-form-label">
-            Prescription:
+          <label for="prescription" class="col-sm-3 col-form-label">
+            <b> Prescription</b>
           </label>
-          <div class="col-sm-10">
+          <div class="col-sm-9">
             <input
               type="text"
               class="form-control"
@@ -103,7 +119,9 @@
             />
           </div>
         </div>
-        <button type="submit" class="btn btn-dark">submit</button>
+        <div class="butn">
+          <button type="submit" class="buttons btn btn-dark">submit</button>
+        </div>
       </form>
 
       <% }) %> <% } %>
